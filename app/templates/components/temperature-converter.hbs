@@ -1,11 +1,20 @@
-<div class='list-group'>
-  <form class='form-inline' {{action 'convertTemperature' on='submit'}}>
-    <div class='form-group'>
-      {{input type='text' class='form-control' placeholder='Celsius' value=celsius}}
-    </div>
-    <div class='form-group'>
-      {{input type='text' class='form-control' placeholder='Fahrenheit' value=fahrenheit}}
-    </div>
-    <button type='submit' class='btn btn-primary'>Convert</button>
-  </form>
+<div class='col-xs-6'>
+  <div class='list-group'>
+    <form class='form-inline' {{action 'convertTemperature' on='submit'}}>
+      <div class='form-group'>
+        {{input type='text' class='form-control' placeholder='Celsius' value=celsius}}
+      </div>
+      <div class='form-group'>
+        {{input type='text' class='form-control' placeholder='Fahrenheit' value=fahrenheit}}
+      </div>
+      <button type='submit' class='btn btn-primary'>Convert</button>
+    </form>
+  </div>
+</div>
+<div class='col-xs-6'>
+  {{#if isCold}}
+    <img src='/assets/images/cold-image.png' alt='image representing cold temperature' class='img-rounded'/>
+  {{else}}
+    <img src='/assets/images/hot-image.png' alt='image representing hot temperature' class='img-rounded'/>
+  {{/if}}
 </div>
